@@ -2,7 +2,7 @@ const readline = require('readline')
 const {input} = require("readline");
 
 const displayIntroduction = require('./interface/interface')
-const shellSort = require('./algorithms/shellSort')
+const bucketSort = require('./algorithms/bucketSort')
 const {readFromFile} = require('./fileWork/fileWork')
 const FILE_PATH = require('./config/path')
 const enums = require('./enums')
@@ -20,7 +20,7 @@ const promptUser = () => { // выбор пользователя из меню
             rl.close();
             console.log("Данные в виде массива:", dataArr);
             console.log("\nОтсортированный массив:");
-            shellSort(dataArr);
+            bucketSort(dataArr);
             return; // Завершаем выполнение функции, чтобы избежать вывода "Введите число"
         }
 
@@ -54,7 +54,7 @@ const app = () => {
                     } else {
                         console.log('Данные из файла в виде массива:', dataArr);
                         console.log('Отсортированный массив:')
-                        shellSort(dataArr)
+                        bucketSort(dataArr)
                     }
                     process.exit();
                 })
